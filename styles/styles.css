@@ -234,12 +234,17 @@ footer > ul{
 }
 
 footer > ul > li{
-margin-right: o.5rem;
+margin-right: 0.5rem;
 }
 
 footer > ul > li > a{
     color: #3434c6;
 }
+
+footer > ul > li a:hover{
+    text-decoration: underline;
+}
+
 
 /* Hide events mobile */
 
