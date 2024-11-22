@@ -169,7 +169,7 @@ header div > a{
 .practice > .practice-text > p > span{
     display: block;
     margin: auto;
-    font-weight: bold;
+    font-weight:100;
     padding: 2rem 0;
 }
 
@@ -193,29 +193,164 @@ header div > a{
     padding: 1rem;
 }
 
-.events > img{
+.events > .events-block > img{
     width: 100%;
     height: auto;
 }
 
-.events .events-text{
+.events > .events-block > .events-text{
     margin: 1rem;
     height: 100%;
     align-content: center;
 }
 
-.events .events-text h3{
+.events > .events-block > .events-text h3{
     font-size: large;
 }
 
-.events .events-text p{
+.events > .events-block > .events-text p{
     font-size: small;
 }
 
-.events .events-text a{
+.events > .events-block > .events-text a{
     font-size: small;
     color: #3434c6;
 }
+
+/* Set up learning section */
+
+.learning{
+    background-color: #d8d8d8;
+    display: grid;
+    grid-column: full-start / full-end;
+    padding-bottom: 2rem;
+}
+
+.learningtitle{
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.showcasecontainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: space-around;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.learning-img{
+    font-size: small;
+    background-color: #fff;
+    padding-bottom: 1.5rem;
+}
+
+.learning-img h4{
+    font-size: large;
+}
+
+.learning-img img{
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+}
+
+.learning-img h4, .learning-img .scope, .learning-img p{
+    margin-left: 1rem;
+    padding-top: 8px;
+}
+
+.learning-img .scope, .learning-img span{
+    color: #aaa;
+}
+
+/* End of learning section */
+
+/* Start of thesis section */
+
+.left{
+    display: flex;                  /* Enable flexbox layout  */
+    justify-content: center;        /* Center content horizontally */
+    flex-direction: column;
+ 
+}
+.thesistitle{
+    display: grid;
+    grid-column: full-start / full-end;
+    text-align: center;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.vidcontainer{
+    max-width: 100%;
+    height: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    grid-column: full-start / full-end;
+    display: grid;
+}
+
+.left > .vidcontainer > .thesis-vid > h4{
+    font-size: large;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.left > .vidcontainer > .thesis-vid > p{
+    font-size: small;
+    font-weight: lighter;
+    padding-bottom: 2rem;
+}
+
+.right{
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+}
+
+.right .right-block{
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.right > .right-block > img{
+    width: 100%;
+    height: auto;
+    background-color: #d8d8d8;
+}
+
+.right > .right-block > .first-right-img{
+    margin-left: 0.1rem;
+    height: 100%;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.right > .right-block > .right-text h3{
+    font-size: large;
+    margin-left: 1.5rem;
+}
+
+.right > .right-block > .right-text p{
+    font-size: small;
+    margin-left: 1.5rem;
+    padding-top: 1rem;
+}
+
+/* End of thesis section */
 
 /* Set up footer */
 
@@ -245,9 +380,15 @@ footer > ul > li a:hover{
     text-decoration: underline;
 }
 
+/* Hide mobile nav */
+#nav-mobile{
+    display: none;
+}
 
-/* Hide events mobile */
-
+/* Hide events mobile img */
+.events > .events-block > .events-img-mobile{
+    display: none;
+}
 
 /** ********************** **/
 /** End of Desktop Section **/
@@ -260,9 +401,110 @@ footer > ul > li a:hover{
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
-    
+  
+    /* Hide the desktop <nav> */
+    nav, .practice, .right{
+    display: none;
+    }
 
-}
+    /* Display mobile nav */
+    #nav-mobile{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        grid-column: full-start / full-end;
+        height: 4rem;
+    }
+
+    /* Set the header image to take up the entire viewport width */
+    header{
+        display: grid;
+        grid-column: full-start / full-end;
+    }
+
+    .imgcontainer{
+        padding: 0;
+    }
+
+    header > div{
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    header > div > h2{
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Set up the events for mobile */
+    .events{
+        display: grid;
+        grid-column: full-start / full-end;
+    }
+
+    .events > .events-block{
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 1rem 0 1rem;
+        border-bottom: none;
+    }
+
+    .events .events-block:first-child{
+        padding-top: 1rem;
+    }
+
+    .events .events-block:last-child{
+        padding-bottom: 2rem;
+    }
+    
+    .events > .events-block > .events-img-desktop{
+        display: none;
+    }
+
+    .events > .events-block > .events-img-mobile{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .events > .events-block > .events-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 5rem;
+        margin-left: 1rem;
+    }
+
+    .learning > .learningtitle > .showcasecontainer > .learning-img img{
+        display: none;
+    }
+
+    .left > .vidcontainer > .thesis-vid h4{
+        display: none;
+    }
+
+    .left > .vidcontainer > .thesis-vid p{
+        display: none;
+    }
+
+    .left{
+        display: grid;
+        grid-column: full-start / full-end;
+        max-width: 100%;
+        padding-bottom: 2rem;
+    }
+
+
+
+    /* Set footer for mobile */
+    footer > ul{
+        display: none;
+    }
+
+    }
 
 /* *********************** */
 /** End of Mobile Section **/
