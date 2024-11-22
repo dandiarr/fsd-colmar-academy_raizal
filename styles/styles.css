@@ -162,15 +162,16 @@ header div > a{
 }
 
 .practice > .practice-text > p{
-    font-size: small;
+    font-size: medium;
     font-weight: lighter;
 }
 
 .practice > .practice-text > p > span{
     display: block;
     margin: auto;
-    font-weight:100;
-    padding: 2rem 0;
+    font-weight:bold;
+    font-size: small;
+    padding: 4rem 0;
 }
 
 /* Set up events section */
@@ -183,6 +184,10 @@ header div > a{
 
 .events .events-block:first-child{
     padding-top: 2rem;
+}
+
+.events > .events-block:last-child{
+    background-color: #d8d8d8;
 }
 
 .events .events-block{
@@ -308,51 +313,47 @@ header div > a{
 }
 
 .left > .vidcontainer > .thesis-vid > p{
-    font-size: small;
+    font-size: medium;
     font-weight: lighter;
     padding-bottom: 2rem;
 }
 
+
 .right{
     display: grid;
-    grid-template-rows: repeat(2, min-content);
+    grid-template-rows: repeat(3, min-content);
+    max-width: 100%;
+}
+
+.right .right-block:first-child{
+    background-color: #d8d8d8;
 }
 
 .right .right-block{
     display: grid;
     grid-template-columns: 0.35fr 0.65fr;
     align-items: center;
-    width: 100%;
     padding: 1rem;
 }
 
 .right > .right-block > img{
     width: 100%;
     height: auto;
-    background-color: #d8d8d8;
 }
 
-.right > .right-block > .first-right-img{
-    margin-left: 0.1rem;
+.right > .right-block > .right-text{
     height: 100%;
-    justify-content: space-around;
     align-content: center;
+    padding-left: 1rem;
 }
 
 .right > .right-block > .right-text h3{
     font-size: large;
-    margin-left: 1.5rem;
 }
 
 .right > .right-block > .right-text p{
     font-size: small;
-    margin-left: 1.5rem;
-    padding-top: 1rem;
 }
-
-/* End of thesis section */
-
-/* Set up footer */
 
 footer{
     font-size: 0.8rem;
@@ -360,7 +361,7 @@ footer{
     grid-column: full-start / full-end;
     justify-content: space-between;
     border-top: 1px solid #e7e7e7;
-    padding: 1rem 1.5rem 2rem;
+    padding: 1rem 1.5rem;
 }
 
 footer > ul{
@@ -457,6 +458,7 @@ footer > ul > li a:hover{
 
     .events .events-block:last-child{
         padding-bottom: 2rem;
+        background-color: #fff;
     }
     
     .events > .events-block > .events-img-desktop{
@@ -478,9 +480,38 @@ footer > ul > li a:hover{
         margin-left: 1rem;
     }
 
-    .learning > .learningtitle > .showcasecontainer > .learning-img img{
+    /* Start of learning-mobile */
+
+    .learning{
+        background-color: #fff;
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+    }
+
+
+    .learning > .showcasecontainer{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem 0 1rem;
+        border-bottom: none;
+    }
+
+    .learning > .showcasecontainer > .learning-img a img{
         display: none;
     }
+
+    .learning > .showcasecontainer > .learning-img a p{
+        display: none;
+    }
+
+    .learning > .showcasecontainer > .learning-img h4{
+        padding: 1rem 0.5rem;
+        font-size: large;
+        justify-content: space-evenly;
+        background-color: #d8d8d8;
+    }
+
+    /* End of learning-mobile */
 
     .left > .vidcontainer > .thesis-vid h4{
         display: none;
@@ -493,11 +524,12 @@ footer > ul > li a:hover{
     .left{
         display: grid;
         grid-column: full-start / full-end;
-        max-width: 100%;
-        padding-bottom: 2rem;
     }
 
-
+    .vidcontainer{
+        padding: 0;
+        margin-bottom: 1.5rem;
+    }
 
     /* Set footer for mobile */
     footer > ul{
